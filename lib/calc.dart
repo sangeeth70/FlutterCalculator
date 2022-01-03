@@ -84,7 +84,7 @@ class _CalculatorState extends State<Calculator> {
               ElevatedButton(
                 onPressed: () {EnterNumber("-");},style: ElevatedButton.styleFrom(fixedSize: Size(75, 75),
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),primary: Color.fromARGB(255,64,75,94)),
-                child: Text('+', style: TextStyle(color: Color.fromARGB(255,212,223,233),fontSize: 20),),
+                child: Text('-', style: TextStyle(color: Color.fromARGB(255,212,223,233),fontSize: 20),),
               ),
             ],
           ),
@@ -125,7 +125,7 @@ class _CalculatorState extends State<Calculator> {
               ElevatedButton(
                 onPressed: () {EnterNumber("0");},style: ElevatedButton.styleFrom(fixedSize: Size(75, 75),
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),primary: Color.fromARGB(255,64,75,94)),
-                child: Text('7', style: TextStyle(color: Color.fromARGB(255,212,223,233),fontSize: 20),),
+                child: Text('0', style: TextStyle(color: Color.fromARGB(255,212,223,233),fontSize: 20),),
               ),
               ElevatedButton(
                 onPressed: () {equalTo();},style: ElevatedButton.styleFrom(fixedSize: Size(75, 75),
