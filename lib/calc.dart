@@ -1,3 +1,5 @@
+
+import 'package:f_calculator/calc_btn.dart';
 import 'package:flutter/material.dart';
 import 'package:math_expressions/math_expressions.dart';
 
@@ -24,11 +26,12 @@ class _CalculatorState extends State<Calculator> {
         children: [
           Container(child: Divider(thickness: 0.5,color: Color.fromARGB(255,212,223,233),),margin: EdgeInsets.only(bottom: 175),),
           Text("$a", style: TextStyle(color: Color.fromARGB(255,212,223,233),fontSize: 35,
+          ),maxLines: 16,
           ),
-          ),Container(width: 310,
+          Container(width: 310,
             child: ElevatedButton(onPressed: backSpace, child: Text('Del',style: TextStyle(color: Color.fromARGB(255,212,223,233), fontSize: 20),
             ),
-            style: ElevatedButton.styleFrom(fixedSize: Size(360,45),primary: Color.fromARGB(255,64,75,94),
+            style: ElevatedButton.styleFrom(fixedSize: Size(360,45),primary: Color.fromARGB(255,64,75,94),elevation: 4,
                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)))
             ),
           ),
@@ -37,110 +40,110 @@ class _CalculatorState extends State<Calculator> {
             child: Container(margin: EdgeInsets.only(left:  10,top: 10,right: 10),
               child: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  
-                     ElevatedButton(
-                      onPressed: () {EnterNumber("1");},style: ElevatedButton.styleFrom(fixedSize: Size(75, 75),
-                         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),primary: Color.fromARGB(255,64,75,94)),
-                      child: Text('1', style: TextStyle(color: Color.fromARGB(255,212,223,233),fontSize: 20),),
-                    ),
 
-                  ElevatedButton(
-                    onPressed: () {EnterNumber("2");},style: ElevatedButton.styleFrom(fixedSize: Size(75, 75),
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),primary: Color.fromARGB(255,64,75,94)),
-                    child: Text('2', style: TextStyle(color: Color.fromARGB(255,212,223,233),fontSize: 20),),
-                  ),
-                  ElevatedButton(
-                    onPressed: () {EnterNumber("3");},style: ElevatedButton.styleFrom(fixedSize: Size(75, 75),
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),primary: Color.fromARGB(255,64,75,94)),
-                    child: Text('3', style: TextStyle(color: Color.fromARGB(255,212,223,233),fontSize: 20),),
-                  ),
-                  ElevatedButton(
-                    onPressed: () {EnterNumber("+");},style: ElevatedButton.styleFrom(fixedSize: Size(75, 75),
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),primary: Color.fromARGB(255,64,75,94)),
-                    child: Text('+', style: TextStyle(color: Color.fromARGB(255,212,223,233),fontSize: 20),),
-                  ),
+                  CBtn(PressedValue: (){
+
+                    EnterNumber("1");
+
+                  },num: '1'),
+
+                  CBtn(PressedValue: (){
+
+                    EnterNumber("2");
+
+                  },num: '2'),
+                  CBtn(PressedValue: (){
+
+                    EnterNumber("3");
+
+                  },num: '3'),
+                  CBtn(PressedValue: (){
+
+                    EnterNumber("+");
+
+                  },num: '+'),
                 ],
               ),
             ),
           ),
           Container(margin: EdgeInsets.only(left:  10,top: 10,right: 10),child: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              ElevatedButton(
-                onPressed: () {EnterNumber("4");},style: ElevatedButton.styleFrom(fixedSize: Size(75, 75),
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),primary: Color.fromARGB(255,64,75,94)),
-                child: Text('4', style: TextStyle(color: Color.fromARGB(255,212,223,233),fontSize: 20),),
-              ),
+              CBtn(PressedValue: (){
 
-              ElevatedButton(
-                onPressed: () {EnterNumber("5");},style: ElevatedButton.styleFrom(fixedSize: Size(75, 75),
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),primary: Color.fromARGB(255,64,75,94)),
-                child: Text('5', style: TextStyle(color: Color.fromARGB(255,212,223,233),fontSize: 20),),
-              ),
-              ElevatedButton(
-                onPressed: () {EnterNumber("6");},style: ElevatedButton.styleFrom(fixedSize: Size(75, 75),
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),primary: Color.fromARGB(255,64,75,94)),
-                child: Text('6', style: TextStyle(color: Color.fromARGB(255,212,223,233),fontSize: 20),),
-              ),
-              ElevatedButton(
-                onPressed: () {EnterNumber("-");},style: ElevatedButton.styleFrom(fixedSize: Size(75, 75),
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),primary: Color.fromARGB(255,64,75,94)),
-                child: Text('-', style: TextStyle(color: Color.fromARGB(255,212,223,233),fontSize: 20),),
-              ),
+                EnterNumber("4");
+
+              },num: '4'),
+
+              CBtn(PressedValue: (){
+
+                EnterNumber("5");
+
+              },num: '5'),
+              CBtn(PressedValue: (){
+
+                EnterNumber("6");
+
+              },num: '6'),
+              CBtn(PressedValue: (){
+
+                EnterNumber("-");
+
+              },num: '-'),
             ],
           ),
           ),
           Container(margin: EdgeInsets.only(left:  10,top: 10,right: 10),child: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              ElevatedButton(
-                onPressed: () {EnterNumber("7");},style: ElevatedButton.styleFrom(fixedSize: Size(75, 75),
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),primary: Color.fromARGB(255,64,75,94)),
-                child: Text('7', style: TextStyle(color: Color.fromARGB(255,212,223,233),fontSize: 20),),
-              ),
+              CBtn(PressedValue: (){
 
-              ElevatedButton(
-                onPressed: () {EnterNumber("8");},style: ElevatedButton.styleFrom(fixedSize: Size(75, 75),
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),primary: Color.fromARGB(255,64,75,94)),
-                child: Text('8', style: TextStyle(color: Color.fromARGB(255,212,223,233),fontSize: 20),),
-              ),
-              ElevatedButton(
-                onPressed: () {EnterNumber("9");},style: ElevatedButton.styleFrom(fixedSize: Size(75, 75),
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),primary: Color.fromARGB(255,64,75,94)),
-                child: Text('9', style: TextStyle(color: Color.fromARGB(255,212,223,233),fontSize: 20),),
-              ),
-              ElevatedButton(
-                onPressed: () {EnterNumber("/");},style: ElevatedButton.styleFrom(fixedSize: Size(75, 75),
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),primary: Color.fromARGB(255,64,75,94)),
-                child: Text('/', style: TextStyle(color: Color.fromARGB(255,212,223,233),fontSize: 20),),
-              ),
+                EnterNumber("7");
+
+              },num: '7',),
+
+              CBtn(PressedValue: (){
+
+                EnterNumber("8");
+
+              },num: '8'),
+              CBtn(PressedValue: (){
+
+                EnterNumber("9");
+
+              },num: '9'),
+              CBtn(PressedValue: (){
+
+                EnterNumber("/");
+
+              },num: '/'),
             ],
           ),
           ),
-          Container(margin: EdgeInsets.only(left:  10,top: 10,right: 10),child: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          Container(margin: EdgeInsets.only(left:  10,top: 10,right: 10,bottom: 20),child: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              ElevatedButton(
-                onPressed: () {Clear();},style: ElevatedButton.styleFrom(fixedSize: Size(75, 75),
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),primary: Color.fromARGB(255,64,75,94)),
-                child: Text('C', style: TextStyle(color: Color.fromARGB(255,212,223,233),fontSize: 20),),
-              ),
-              ElevatedButton(
-                onPressed: () {EnterNumber("0");},style: ElevatedButton.styleFrom(fixedSize: Size(75, 75),
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),primary: Color.fromARGB(255,64,75,94)),
-                child: Text('0', style: TextStyle(color: Color.fromARGB(255,212,223,233),fontSize: 20),),
-              ),
-              ElevatedButton(
-                onPressed: () {equalTo();},style: ElevatedButton.styleFrom(fixedSize: Size(75, 75),
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),primary: Color.fromARGB(255,212,223,233)),
-                child: Text('=', style: TextStyle(color: Color.fromARGB(255,64,75,94),fontSize: 20),),
-              ),
-              ElevatedButton(
-                onPressed: () {EnterNumber("*");},style: ElevatedButton.styleFrom(fixedSize: Size(75, 75),
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),primary: Color.fromARGB(255,64,75,94)),
-                child: Text('*', style: TextStyle(color: Color.fromARGB(255,212,223,233),fontSize: 20),),
-              ),
+              CBtn(PressedValue: (){
+
+               Clear();
+
+              },num: 'C'),
+              CBtn(PressedValue: (){
+
+                EnterNumber("0");
+
+              },num: '0'),
+              CBtn(PressedValue: (){
+
+                equalTo();
+
+              },num: '='),
+              CBtn(PressedValue: (){
+
+                EnterNumber("x");
+
+              },num: 'x'),
             ],
           )
-          ),
-          SizedBox(height: 20,)
+          ,),
+
 
         ],
       ),
@@ -172,14 +175,16 @@ Clear(){
     });
 }
 backSpace(){
+    List<String> z=a.split("");
+z.removeLast();
+a=z.join();
     setState(() {
-      List<String> z=a.split("");
-      z.removeLast();
-      a=z.join();
+
     });
 }
 
 }
+
 //argb(255,54,67,83)=bg
 //argb(255,56,67,83)=btn
 //argb(255,212,223,233)=txt
