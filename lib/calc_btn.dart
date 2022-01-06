@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class CBtn extends StatefulWidget {
   final num;
   Function() PressedValue;
-   TextStyle? textStyle=TextStyle(fontSize: 17);
+   TextStyle? textStyle=TextStyle(fontSize: 22);
   CBtn({Key? key,required this.num,required this.PressedValue,this.textStyle}) : super(key: key);
 
   @override

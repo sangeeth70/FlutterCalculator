@@ -1,5 +1,6 @@
 
 import 'package:f_calculator/calc_btn.dart';
+import 'package:f_calculator/del_btn.dart';
 import 'package:flutter/material.dart';
 import 'package:math_expressions/math_expressions.dart';
 
@@ -29,11 +30,9 @@ class _CalculatorState extends State<Calculator> {
           ),maxLines: 16,
           ),
           Container(width: 310,
-            child: ElevatedButton(onPressed: backSpace, child: Text('Del',style: TextStyle(color: Color.fromARGB(255,212,223,233), fontSize: 20),
-            ),
-            style: ElevatedButton.styleFrom(fixedSize: Size(360,45),primary: Color.fromARGB(255,64,75,94),elevation: 4,
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)))
-            ),
+            child: Del(PressedValue: () {
+              backSpace();
+            },num: 'Del',),
           ),
 
           Container(
@@ -45,23 +44,23 @@ class _CalculatorState extends State<Calculator> {
 
                     EnterNumber("1");
 
-                  },num: '1'),
+                  },num: '1',textStyle: TextStyle(fontSize: 20),),
 
                   CBtn(PressedValue: (){
 
                     EnterNumber("2");
 
-                  },num: '2'),
+                  },num: '2',textStyle: TextStyle(fontSize: 20),),
                   CBtn(PressedValue: (){
 
                     EnterNumber("3");
 
-                  },num: '3'),
+                  },num: '3',textStyle: TextStyle(fontSize: 20),),
                   CBtn(PressedValue: (){
 
                     EnterNumber("+");
 
-                  },num: '+'),
+                  },num: '+',textStyle: TextStyle(fontSize: 20),),
                 ],
               ),
             ),
@@ -72,18 +71,18 @@ class _CalculatorState extends State<Calculator> {
 
                 EnterNumber("4");
 
-              },num: '4'),
+              },num: '4',textStyle: TextStyle(fontSize: 20),),
 
               CBtn(PressedValue: (){
 
                 EnterNumber("5");
 
-              },num: '5'),
+              },num: '5',textStyle: TextStyle(fontSize: 20),),
               CBtn(PressedValue: (){
 
                 EnterNumber("6");
 
-              },num: '6'),
+              },num: '6',textStyle: TextStyle(fontSize: 20),),
               CBtn(PressedValue: (){
 
                 EnterNumber("-");
@@ -98,23 +97,23 @@ class _CalculatorState extends State<Calculator> {
 
                 EnterNumber("7");
 
-              },num: '7',),
+              },num: '7',textStyle: TextStyle(fontSize: 20),),
 
               CBtn(PressedValue: (){
 
                 EnterNumber("8");
 
-              },num: '8'),
+              },num: '8',textStyle: TextStyle(fontSize: 20),),
               CBtn(PressedValue: (){
 
                 EnterNumber("9");
 
-              },num: '9'),
+              },num: '9',textStyle: TextStyle(fontSize: 20),),
               CBtn(PressedValue: (){
 
                 EnterNumber("/");
 
-              },num: '/'),
+              },num: '/',textStyle: TextStyle(fontSize: 20),),
             ],
           ),
           ),
@@ -124,22 +123,22 @@ class _CalculatorState extends State<Calculator> {
 
                Clear();
 
-              },num: 'C'),
+              },num: 'C',textStyle: TextStyle(fontSize: 20),),
               CBtn(PressedValue: (){
 
                 EnterNumber("0");
 
-              },num: '0'),
+              },num: '0',textStyle: TextStyle(fontSize: 20),),
               CBtn(PressedValue: (){
 
                 equalTo();
 
-              },num: '='),
+              },num: '=',textStyle: TextStyle(fontSize: 20),),
               CBtn(PressedValue: (){
 
                 EnterNumber("x");
 
-              },num: 'x'),
+              },num: 'x',textStyle: TextStyle(fontSize: 20),),
             ],
           )
           ,),
@@ -169,19 +168,19 @@ class _CalculatorState extends State<Calculator> {
       a=eval.toString();
     });
   }
-Clear(){
+  Clear(){
     setState(() {
       a='';
     });
-}
-backSpace(){
+  }
+  backSpace(){
     List<String> z=a.split("");
-z.removeLast();
-a=z.join();
+    z.removeLast();
+    a=z.join();
     setState(() {
 
     });
-}
+  }
 
 }
 
